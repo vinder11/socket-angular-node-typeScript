@@ -30,11 +30,13 @@ export default class Server {
       //console.log('Nuevo cliente conectado');
       //console.log(cliente.id);
       //Conectar clientes
-      socket.conectarUsuario(cliente);
+      socket.conectarUsuario(cliente, this.io);
       //Configurar usuario
       socket.configurarUsuario(cliente, this.io);
+      //Obtener usuarios ACTIVOS
+      socket.obtenerUsuario(cliente, this.io);
       //Desconectar
-      socket.desconectar(cliente);
+      socket.desconectar(cliente, this.io);
       //Mensaje
       socket.mensaje(cliente, this.io);
       //Usuari
